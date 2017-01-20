@@ -1,18 +1,16 @@
 class Pangram
   def self.pangram?(input)
-    input=input.downcase
-  #  input=input.split
-    count=0
-
+    input.downcase
+    count = 0
     ('a'..'z').each do |i|
       if (input.include?i)
-        count=count+1
+        count += 1
       else
-        return false
+        false
       end
     end
-    if(count==26)
-      returnt=true
+    if count.equal(26)
+      true
     end
   end
 end
