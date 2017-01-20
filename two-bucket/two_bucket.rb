@@ -5,26 +5,22 @@ class TwoBucket
     @goal = goal
     @start = start
   end
-
   def moves
     if @start == 'one'
       count = 0
       bucket1 = @b1
       bucket2 = 0
       count += 1
-
       while 1
         if bucket1 > 0
             bucket2 = bucket2 + bucket1
             bucket1 = 0
             count += 1
         end
-
         if bucket1 == 0
           bucket1 = @b1
           count += 1
         end
-
         if bucket1 + bucket2 > @b2
           count += 1
            n = bucket1 + bucket2 - @b2
@@ -36,14 +32,11 @@ class TwoBucket
           bucket2 = bucket2 + bucket1
           bucket1 = 0
         end
-
         if bucket2 == @b2
           count += 1
           bucket2 = 0
         end
-
       end
-
     @goal_bucket = 'one'
     @other_bucket = bucket2
     count
@@ -52,7 +45,6 @@ class TwoBucket
     bucket2 = @b2
     bucket1 = 0
     count += 1
-
     while 1
       if bucket2 > 0
         if bucket1 + bucket2 > @b1
@@ -67,33 +59,25 @@ class TwoBucket
           count += 1
         end
       end
-
       if bucket2 == 0
         bucket2 = @b2
         count += 1
       end
-
-
       if bucket1 == @b1
         count += 1
         bucket1 = 0
       end
-
     end
-
   @goal_bucket = 'two'
   @other_bucket = bucket1
   count
-
   end
-
   end
-
+  
   def goal_bucket
-    return @goal_bucket
+    @goal_bucket
   end
-
   def other_bucket
-    return @other_bucket
+    @other_bucket
   end
 end
