@@ -9,8 +9,7 @@ class Pangram
         false
       end
     end
-    if count.equal(26)
-      true
+     return true if(count.equal(26))
     end
   end
 end
