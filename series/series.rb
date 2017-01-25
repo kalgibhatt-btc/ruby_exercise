@@ -8,11 +8,6 @@ class Series
     length = @number.length
     raise ArgumentError if n > length
     result = @array_number if n == 1
-    # (0..length-1).each do |i|
-    # result[] = @number[i] + @number[i+1]
-    # i+= 1
-    # break if @number[i].length == n
-    # end
     (0...length-n+1).each do |i|
       result.push(@number.slice(i,n).to_s)
     end
